@@ -1,0 +1,52 @@
+package practice;
+
+public class String_practice {
+	
+	public void countcharsNumothers(String str) {
+		int alpha=0,num=0,other=0; 
+		///A to z (65 to 90) 
+		//a to z (97 to 122)
+		// 0 to 9 (48 to 57 )
+		for(int i=0;i<str.length();i++) {
+			if(str.charAt(i)>=48 && str.charAt(i)<=57) {
+				num++; 
+			}
+			else if((str.charAt(i)>=65 && str.charAt(i)<=90) ||(str.charAt(i)>=97 && str.charAt(i)<=122) ) {
+				alpha++;
+			}
+			else {
+				other++;
+			}
+			
+		}
+		System.out.println("The Number of alphabets::"+alpha+"  the number of numbers:::"+num+" The number of special chracters:::"+other);
+		
+	}
+	
+	public void countVowelConsonant(String str) {
+		int vowel =0,consonant=0 ; 
+		for(int i=0;i<str.length();i++) {
+			char ch = str.charAt(i);
+			if(ch=='a'||ch=='A'||ch=='e'||ch=='E'||ch=='i'||ch=='I'||ch=='o'||ch=='O'||ch=='u'||ch=='U') {
+				vowel++;
+			}
+			else 
+			{
+				consonant++;
+			}
+		}
+		System.out.println("The number of vowels is :::"+vowel+"   the number of consonants is :::"+consonant);
+		
+	}
+	public void isStringAngrams(String str) {
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String_practice obj = new String_practice(); 
+		obj.countcharsNumothers("Sriram%%%123%$");
+		obj.countVowelConsonant("Abcdioua");
+	}
+
+}

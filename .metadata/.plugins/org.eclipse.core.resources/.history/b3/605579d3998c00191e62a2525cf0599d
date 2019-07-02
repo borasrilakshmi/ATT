@@ -1,0 +1,69 @@
+package practice;
+
+public class Numbers {
+static	int n1=0,n2=1,n3=0;
+	public void fibnaciwithoutusingrecursion(int count) {
+		int n1=0,n2=1,n3; 
+		System.out.print(n1+" "+n2+" ");
+		for(int i=2;i<count;i++) {
+			n3=n1+n2; 
+			n1=n2;n2=n3;
+			System.out.print(n3+" ");
+		}
+	}
+	public void fibnaciUsingRecursion(int count) {
+		if(count>0) {
+			n3=n1+n2; 
+			n2=n1;
+			n1=n3; 
+			System.out.print(" "+n3);
+
+			fibnaciUsingRecursion(count-1);
+
+		}
+	}
+	
+	public void primenumber(int num) {
+		int count=0;
+		for(int i=2;i<num;i++) {
+			if(num%i==0) {
+				count=1;
+				break;
+			}
+		}
+		if(count==1) {
+			System.out.println("Given number is not a prime Number");
+
+		}
+		else {
+			System.out.println("Given number is  a prime number");
+
+		}
+		
+	}
+	public void palindram(int num) {
+		int temp=num,rev=0;
+		while(num>0) {
+			rev=rev*10+(num%10);
+			num=num/10;
+		}
+		if(temp==rev) {
+			System.out.println("The given number is palandram");
+		}
+		else {
+			System.out.println("The given number is not a palandram");
+		}
+	}
+	public static void main(String[] args) {
+		Numbers obj=new Numbers(); 
+		obj.fibnaciwithoutusingrecursion(10);
+		System.out.println();
+		System.out.print(obj.n1+" "+obj.n2 );
+		obj.fibnaciUsingRecursion(8);
+		System.out.println();
+		obj.primenumber(4);
+		obj.palindram(112);
+	}
+
+	
+}

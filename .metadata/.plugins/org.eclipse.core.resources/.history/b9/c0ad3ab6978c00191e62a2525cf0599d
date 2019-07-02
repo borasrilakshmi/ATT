@@ -1,0 +1,39 @@
+package practice;
+
+public class Numbers {
+static	int n1=0,n2=1,n3=0;
+	public void fibnaciwithoutusingrecursion(int count) {
+		int n1=0,n2=1,n3; 
+		System.out.print(n1+" "+n2+" ");
+		for(int i=2;i<count;i++) {
+			n3=n1+n2; 
+			n1=n2;n2=n3;
+			System.out.print(n3+" ");
+		}
+	}
+	public void fibnaciUsingRecursion(int count) {
+		if(count>0) {
+			n3=n1+n2; 
+			n2=n1;
+			n1=n3; 
+			System.out.print(" "+n3);
+
+			fibnaciUsingRecursion(count-1);
+
+		}
+	}
+	
+	public void primenumber(int num) {
+		
+		
+	}
+	public static void main(String[] args) {
+		Numbers obj=new Numbers(); 
+		obj.fibnaciwithoutusingrecursion(10);
+		System.out.println();
+		System.out.print(obj.n1+" "+obj.n2 );
+		obj.fibnaciUsingRecursion(8);
+	}
+
+	
+}
